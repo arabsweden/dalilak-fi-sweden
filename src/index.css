@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Cairo', system-ui, -apple-system, sans-serif;
+  --color-sweden-blue: #005293;
+  --color-sweden-dark: #0A2540;
+  --color-sweden-deep: #061727;
+  --color-sweden-yellow: #FECC00;
+  --color-sweden-yellow-hover: #E5B800;
+  --color-sweden-gold: #F59E0B;
+  --color-sweden-light-blue: #EBF4FA;
+}
+
+body {
+  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ============================================================
+   PRINT STYLESHEET (Physical Copies & PDF Export Optimization)
+   ============================================================ */
+@media print {
+  @page {
+    margin: 1.2cm;
+    size: A4 portrait;
+  }
+
+  /* Reset body and hide background application elements */
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 11pt !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide app navigation, main tabs, bottom navigation, headers and toasts */
+  #root > header,
+  #root > main,
+  #bottom-nav,
+  nav,
+  .no-print,
+  [data-no-print="true"] {
+    display: none !important;
+  }
+
+  /* If a modal is active for printing, make it full-page flowing document */
+  #guide-detail-modal-container {
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  #printable-guide-modal {
+    position: static !important;
+    max-height: none !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: visible !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  #printable-guide-body {
+    overflow: visible !important;
+    max-height: none !important;
+    padding: 0 !important;
+  }
+
+  /* Avoid awkward page breaks across steps or requirement sections */
+  .print-break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Clean contrast for printing boxes */
+  .print-clean-box {
+    background: #ffffff !important;
+    border: 1pt solid #cbd5e1 !important;
+    box-shadow: none !important;
+  }
+}
+

@@ -1,0 +1,11 @@
+{
+  "name": "دليلك في السويد",
+  "description": "دليل عربي عملي شامل للحياة في السويد، الهجرة، الدوائر الحكومية، السكن، العمل، والسياحة بستوكهولم",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
